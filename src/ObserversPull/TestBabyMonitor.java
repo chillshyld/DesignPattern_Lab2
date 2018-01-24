@@ -1,0 +1,21 @@
+package ObserversPull;
+
+
+import ObserversPull.Baby;
+import ObserversPull.BabyMonitorAdvanced;
+import ObserversPull.BabyMonitorSimple;
+
+public class TestBabyMonitor {
+
+    public static void main(String[] args) {
+        Baby marla = new Baby("marla");
+        // one monitor with one baby
+        BabyMonitorSimple livingRoom = new BabyMonitorSimple("Toilet ", marla);
+        marla.setData(true, 1); // setData(Crying?, Level?)
+        // one monitor listening to two babies
+        Baby charlie = new Baby("Charlie");
+        BabyMonitorAdvanced kitchen = new BabyMonitorAdvanced("Living room ", marla, charlie);
+        marla.setData(true, 2);
+        charlie.setData(true, 1);
+    }
+}
